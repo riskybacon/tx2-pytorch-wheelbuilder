@@ -15,8 +15,8 @@ Install nvidia-docker on host before starting, if needed
 Create the wheelbuilder docker image
 
 ```
-pushd docker
-docker build -t wheelbuilder .
+pushd wheelbuilder
+./build.sh
 popd
 ```
 
@@ -31,7 +31,7 @@ export DIST=$(pwd)/dist
 export SOURCES=$(pwd)/sources
 export SCRIPTS=$(pwd)/scripts
 
-for pkg in cython ninja numpy pillow pytorch torchvision apex
+for pkg in cython ninja numpy pillow pytorch torchvision ; do
     nvidia-docker run --rm -v${DIST}:/dist -v${SOURCES}:/sources -v${SCRIPTS}:/scripts:ro wheelbuilder:latest ./scripts/${pkg}.sh
 done
 ```

@@ -4,14 +4,14 @@ ARCH=$(uname -m)
 SYSTEM=$(uname -s | tr "[A-Z]" "[a-z]")
 SOURCE_DIR=/source
 DIST_DIR=/dist
-VERSION=1.2.0
+VERSION=1.4.1
 TAG="v${VERSION}"
 GIT_REPO="https://github.com/pytorch/pytorch.git"
 
 # Install dependencies
-pip3 install /dist/Cython-0.29.13-cp36-cp36m-linux_aarch64.whl
-pip3 install /dist/numpy-1.17.1-cp36-cp36m-linux_aarch64.whl
-pip3 install /dist/ninja-1.9.0-cp36-cp36m-linux_aarch64.whl
+pip3 install /dist/Cython-0.29.20-cp36-cp36m-linux_aarch64.whl
+pip3 install /dist/numpy-1.19.0-cp36-cp36m-linux_aarch64.whl
+pip3 install /dist/ninja-1.10.0-cp36-cp36m-linux_aarch64.whl
 pip3 install scikit-build
 
 # Get source code

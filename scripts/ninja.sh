@@ -4,7 +4,7 @@ ARCH=$(uname -m)
 SYSTEM=$(uname -s | tr "[A-Z]" "[a-z]")
 SOURCE_DIR=/source
 DIST_DIR=/dist
-VERSION=1.9.0
+VERSION=1.10.0
 TAG="${VERSION}"
 GIT_REPO="https://github.com/scikit-build/ninja-python-distributions.git"
 
