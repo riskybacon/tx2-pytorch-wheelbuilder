@@ -25,13 +25,13 @@ Create wheels:
 From top level of repo dir
 
 ```
-mkdir dist
-mkdir sources
 export DIST=$(pwd)/dist
-export SOURCES=$(pwd)/sources
+export BUILD=$(pwd)/../build
 export SCRIPTS=$(pwd)/scripts
+mkdir ${DIST}
+mkdir ${BUILD}
 
 for pkg in cython ninja numpy pillow pytorch torchvision ; do
-    nvidia-docker run --rm -v${DIST}:/dist -v${SOURCES}:/sources -v${SCRIPTS}:/scripts:ro wheelbuilder:latest ./scripts/${pkg}.sh
+    nvidia-docker run --rm -v${DIST}:/dist -v${BUILD}:/build -v${SCRIPTS}:/scripts:ro wheelbuilder:latest ./scripts/${pkg}.sh
 done
 ```
